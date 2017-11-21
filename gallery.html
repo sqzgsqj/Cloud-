@@ -1,0 +1,964 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>云管理 | 画廊</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!--引入css样式表-->
+	<link rel="stylesheet" type="text/css" href="css/cloud-admin.css" >
+	<link rel="stylesheet" type="text/css"  href="css/themes/default.css" id="skin-switcher" >
+	<link rel="stylesheet" type="text/css"  href="css/responsive.css" >
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+	<link rel="stylesheet" type="text/css" href="css/animatecss/animate.min.css" />
+	<link rel="stylesheet" type="text/css" href="js/colorbox/colorbox.min.css" />
+	<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<!--头部导航-->
+<header class="navbar clearfix" id="header">
+	<div class="container">
+		<div class="navbar-brand">
+			<a href="index.html">
+				<img src="img/logo/logo.png" alt="Cloud Admin Logo" class="img-responsive" height="30" width="120">
+			</a>
+			<div class="visible-xs">
+				<a href="#" class="team-status-toggle switcher btn dropdown-toggle">
+					<i class="fa fa-users"></i>
+				</a>
+			</div>
+			<div id="sidebar-collapse" class="sidebar-collapse btn">
+				<i class="fa fa-bars"
+				   data-icon1="fa fa-bars"
+				   data-icon2="fa fa-bars" ></i>
+			</div>
+		</div>
+		<ul class="nav navbar-nav pull-left hidden-xs" id="navbar-left">
+			<li class="dropdown">
+				<a href="#" class="team-status-toggle dropdown-toggle tip-bottom" data-toggle="tooltip" title="团队成员页面切换">
+					<i class="fa fa-users"></i>
+					<span class="name">团队成员</span>
+					<i class="fa fa-angle-down"></i>
+				</a>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-cog"></i>
+					<span class="name">皮肤</span>
+					<i class="fa fa-angle-down"></i>
+				</a>
+				<ul class="dropdown-menu skins">
+					<li class="dropdown-title">
+						<span><i class="fa fa-leaf"></i> 主题皮肤</span>
+					</li>
+					<li><a href="#" data-skin="default">默认</a></li>
+					<li><a href="#" data-skin="night">夜晚</a></li>
+					<li><a href="#" data-skin="earth">棕色</a></li>
+					<li><a href="#" data-skin="utopia">黄色</a></li>
+					<li><a href="#" data-skin="nature">自然</a></li>
+					<li><a href="#" data-skin="graphite">黑色</a></li>
+				</ul>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav pull-right">
+			<li class="dropdown" id="header-notification">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-bell"></i>
+					<span class="badge">7</span>
+				</a>
+				<ul class="dropdown-menu notification">
+					<li class="dropdown-title">
+						<span><i class="fa fa-bell"></i> 7 通知</span>
+					</li>
+					<li>
+						<a href="#">
+							<span class="label label-success"><i class="fa fa-user"></i></span>
+							<span class="body">
+										<span class="message">5 在线人数. </span>
+										<span class="time">
+											<i class="fa fa-clock-o"></i>
+											<span>现在</span>
+										</span>
+									</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="label label-primary"><i class="fa fa-comment"></i></span>
+							<span class="body">
+										<span class="message">马丁发表意见.</span>
+										<span class="time">
+											<i class="fa fa-clock-o"></i>
+											<span>19 分钟</span>
+										</span>
+									</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="label label-warning"><i class="fa fa-lock"></i></span>
+							<span class="body">
+										<span class="message">DW1 服务器锁定.</span>
+										<span class="time">
+											<i class="fa fa-clock-o"></i>
+											<span>32 分钟</span>
+										</span>
+									</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="label label-info"><i class="fa fa-twitter"></i></span>
+							<span class="body">
+										<span class="message">Twitter 链接.</span>
+										<span class="time">
+											<i class="fa fa-clock-o"></i>
+											<span>55 分钟</span>
+										</span>
+									</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="label label-danger"><i class="fa fa-heart"></i></span>
+							<span class="body">
+										<span class="message">简喜欢. </span>
+										<span class="time">
+											<i class="fa fa-clock-o"></i>
+											<span>2 小时</span>
+										</span>
+									</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="label label-warning"><i class="fa fa-exclamation-triangle"></i></span>
+							<span class="body">
+										<span class="message">数据库过载.</span>
+										<span class="time">
+											<i class="fa fa-clock-o"></i>
+											<span>6 小时</span>
+										</span>
+									</span>
+						</a>
+					</li>
+					<li class="footer">
+						<a href="#">看到所有的通知 <i class="fa fa-arrow-circle-right"></i></a>
+					</li>
+				</ul>
+			</li>
+			<li class="dropdown" id="header-message">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-envelope"></i>
+					<span class="badge">3</span>
+				</a>
+				<ul class="dropdown-menu inbox">
+					<li class="dropdown-title">
+						<span><i class="fa fa-envelope-o"></i> 3 信息</span>
+						<span class="compose pull-right tip-right" title="编辑信息"><i class="fa fa-pencil-square-o"></i></span>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/avatars/avatar2.jpg" alt="" />
+							<span class="body">
+										<span class="from">王国喜</span>
+										<span class="message">
+										你还在不在，在的话接我的电话，找你有要紧事，赶紧回复...
+										</span>
+										<span class="time">
+											<i class="fa fa-clock-o"></i>
+											<span>刚刚</span>
+										</span>
+									</span>
+
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/avatars/avatar1.jpg" alt="" />
+							<span class="body">张智栋<span class="message">
+										你的域名给我用一下，是www.ttncyl.tn.com吗？ 还有服务器地址给我下...
+										</span>
+										<span class="time">
+											<i class="fa fa-clock-o"></i>
+											<span>15 分钟前</span>
+										</span>
+									</span>
+
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/avatars/avatar8.jpg" alt="" />
+							<span class="body">
+										<span class="from">老王</span>
+										<span class="message">
+										帮我打些广告 ，哟剖重谢，你赶紧回复我，我给你广告模板，和链接...
+										</span>
+										<span class="time">
+											<i class="fa fa-clock-o"></i>
+											<span>2 小时前</span>
+										</span>
+									</span>
+
+						</a>
+					</li>
+					<li class="footer">
+						<a href="#">查看所有消息 <i class="fa fa-arrow-circle-right"></i></a>
+					</li>
+				</ul>
+			</li>
+			<li class="dropdown" id="header-tasks">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-tasks"></i>
+					<span class="badge">3</span>
+				</a>
+				<ul class="dropdown-menu tasks">
+					<li class="dropdown-title">
+						<span><i class="fa fa-check"></i> 6 任务进行中</span>
+					</li>
+					<li>
+						<a href="#">
+									<span class="header clearfix">
+										<span class="pull-left">软件更新</span>
+										<span class="pull-right">60%</span>
+									</span>
+							<div class="progress">
+								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+									<span class="sr-only">60% 完成</span>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+									<span class="header clearfix">
+										<span class="pull-left">软件更新</span>
+										<span class="pull-right">25%</span>
+									</span>
+							<div class="progress">
+								<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+									<span class="sr-only">25% 完成</span>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+									<span class="header clearfix">
+										<span class="pull-left">软件更新</span>
+										<span class="pull-right">40%</span>
+									</span>
+							<div class="progress progress-striped">
+								<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+									<span class="sr-only">40% 完成</span>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+									<span class="header clearfix">
+										<span class="pull-left">软件更新</span>
+										<span class="pull-right">70%</span>
+									</span>
+							<div class="progress progress-striped active">
+								<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+									<span class="sr-only">70% 完成</span>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+									<span class="header clearfix">
+										<span class="pull-left">软件更新</span>
+										<span class="pull-right">65%</span>
+									</span>
+							<div class="progress">
+								<div class="progress-bar progress-bar-success" style="width: 35%">
+									<span class="sr-only">35% 完成 (成功)</span>
+								</div>
+								<div class="progress-bar progress-bar-warning" style="width: 20%">
+									<span class="sr-only">20% 完成 (警告)</span>
+								</div>
+								<div class="progress-bar progress-bar-danger" style="width: 10%">
+									<span class="sr-only">10% 完成 (危险)</span>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="footer">
+						<a href="#">查看所有进程 <i class="fa fa-arrow-circle-right"></i></a>
+					</li>
+				</ul>
+			</li>
+			<li class="dropdown user" id="header-user">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<img alt="" src="img/avatars/avatar3.jpg" />
+					<span class="username">我</span>
+					<i class="fa fa-angle-down"></i>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="#"><i class="fa fa-user"></i> 我的资料</a></li>
+					<li><a href="#"><i class="fa fa-cog"></i> 账户设置</a></li>
+					<li><a href="#"><i class="fa fa-eye"></i> 隐私设置</a></li>
+					<li><a href="login.html"><i class="fa fa-power-off"></i> 退出</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="container team-status" id="team-status">
+		<div id="scrollbar">
+			<div class="handle">
+			</div>
+		</div>
+		<div id="teamslider">
+			<ul class="team-list">
+				<li class="current">
+					<a href="javascript:void(0);">
+				  <span class="image">
+					  <img src="img/avatars/avatar3.jpg" alt="" />
+				  </span>
+						<span class="title">
+					陈永龙
+				  </span>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" style="width: 35%">
+								<span class="sr-only">35% 完成 (成功)</span>
+							</div>
+							<div class="progress-bar progress-bar-warning" style="width: 20%">
+								<span class="sr-only">20% 完成 (警告)</span>
+							</div>
+							<div class="progress-bar progress-bar-danger" style="width: 10%">
+								<span class="sr-only">10% 完成 (危险)</span>
+							</div>
+						</div>
+						<span class="status">
+						<div class="field">
+							<span class="badge badge-green">6</span> 完成
+							<span class="pull-right fa fa-check"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-orange">3</span> 正在进行
+							<span class="pull-right fa fa-adjust"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-red">1</span>待定
+							<span class="pull-right fa fa-list-ul"></span>
+						</div>
+				    </span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+				  <span class="image">
+					  <img src="img/avatars/avatar1.jpg" alt="" />
+				  </span>
+						<span class="title">
+					臧凌宇
+				  </span>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" style="width: 15%">
+								<span class="sr-only">35% 完成 (成功)</span>
+							</div>
+							<div class="progress-bar progress-bar-warning" style="width: 40%">
+								<span class="sr-only">20% 完成 (警告)</span>
+							</div>
+							<div class="progress-bar progress-bar-danger" style="width: 20%">
+								<span class="sr-only">10% 完成 (危险)</span>
+							</div>
+						</div>
+						<span class="status">
+						<div class="field">
+							<span class="badge badge-green">2</span> 完成
+							<span class="pull-right fa fa-check"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-orange">8</span> 正在进行
+							<span class="pull-right fa fa-adjust"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-red">4</span> 待定
+							<span class="pull-right fa fa-list-ul"></span>
+						</div>
+				    </span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+				  <span class="image">
+					  <img src="img/avatars/avatar2.jpg" alt="" />
+				  </span>
+						<span class="title">
+					未知
+				  </span>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" style="width: 65%">
+								<span class="sr-only">35% 完成 (成功)</span>
+							</div>
+							<div class="progress-bar progress-bar-warning" style="width: 10%">
+								<span class="sr-only">20% 完成 (警告)</span>
+							</div>
+							<div class="progress-bar progress-bar-danger" style="width: 15%">
+								<span class="sr-only">10% 完成 (危险)</span>
+							</div>
+						</div>
+						<span class="status">
+						<div class="field">
+							<span class="badge badge-green">10</span> 完成
+							<span class="pull-right fa fa-check"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-orange">3</span>正在进行
+							<span class="pull-right fa fa-adjust"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-red">4</span>待定
+							<span class="pull-right fa fa-list-ul"></span>
+						</div>
+				    </span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+				  <span class="image">
+					  <img src="img/avatars/avatar2.jpg" alt="" />
+				  </span>
+						<span class="title">
+					未知
+				  </span>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" style="width: 65%">
+								<span class="sr-only">35% 完成 (成功)</span>
+							</div>
+							<div class="progress-bar progress-bar-warning" style="width: 10%">
+								<span class="sr-only">20% 完成 (警告)</span>
+							</div>
+							<div class="progress-bar progress-bar-danger" style="width: 15%">
+								<span class="sr-only">10% 完成 (危险)</span>
+							</div>
+						</div>
+						<span class="status">
+						<div class="field">
+							<span class="badge badge-green">10</span> 完成
+							<span class="pull-right fa fa-check"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-orange">3</span>正在进行
+							<span class="pull-right fa fa-adjust"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-red">4</span>待定
+							<span class="pull-right fa fa-list-ul"></span>
+						</div>
+				    </span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+				  <span class="image">
+					  <img src="img/avatars/avatar2.jpg" alt="" />
+				  </span>
+						<span class="title">
+					未知
+				  </span>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" style="width: 65%">
+								<span class="sr-only">35% 完成 (成功)</span>
+							</div>
+							<div class="progress-bar progress-bar-warning" style="width: 10%">
+								<span class="sr-only">20% 完成 (警告)</span>
+							</div>
+							<div class="progress-bar progress-bar-danger" style="width: 15%">
+								<span class="sr-only">10% 完成 (危险)</span>
+							</div>
+						</div>
+						<span class="status">
+						<div class="field">
+							<span class="badge badge-green">10</span> 完成
+							<span class="pull-right fa fa-check"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-orange">3</span>正在进行
+							<span class="pull-right fa fa-adjust"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-red">4</span>待定
+							<span class="pull-right fa fa-list-ul"></span>
+						</div>
+				    </span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+				  <span class="image">
+					  <img src="img/avatars/avatar2.jpg" alt="" />
+				  </span>
+						<span class="title">
+					未知
+				  </span>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" style="width: 65%">
+								<span class="sr-only">35% 完成 (成功)</span>
+							</div>
+							<div class="progress-bar progress-bar-warning" style="width: 10%">
+								<span class="sr-only">20% 完成 (警告)</span>
+							</div>
+							<div class="progress-bar progress-bar-danger" style="width: 15%">
+								<span class="sr-only">10% 完成 (危险)</span>
+							</div>
+						</div>
+						<span class="status">
+						<div class="field">
+							<span class="badge badge-green">10</span> 完成
+							<span class="pull-right fa fa-check"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-orange">3</span>正在进行
+							<span class="pull-right fa fa-adjust"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-red">4</span>待定
+							<span class="pull-right fa fa-list-ul"></span>
+						</div>
+				    </span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+				  <span class="image">
+					  <img src="img/avatars/avatar2.jpg" alt="" />
+				  </span>
+						<span class="title">
+					未知
+				  </span>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" style="width: 65%">
+								<span class="sr-only">35% 完成 (成功)</span>
+							</div>
+							<div class="progress-bar progress-bar-warning" style="width: 10%">
+								<span class="sr-only">20% 完成 (警告)</span>
+							</div>
+							<div class="progress-bar progress-bar-danger" style="width: 15%">
+								<span class="sr-only">10% 完成 (危险)</span>
+							</div>
+						</div>
+						<span class="status">
+						<div class="field">
+							<span class="badge badge-green">10</span> 完成
+							<span class="pull-right fa fa-check"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-orange">3</span>正在进行
+							<span class="pull-right fa fa-adjust"></span>
+						</div>
+						<div class="field">
+							<span class="badge badge-red">4</span>待定
+							<span class="pull-right fa fa-list-ul"></span>
+						</div>
+				    </span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<!--头部导航结束 -->
+<section id="page">
+	<!-- 侧边栏 -->
+	<div id="sidebar" class="sidebar">
+		<div class="sidebar-menu nav-collapse">
+			<div class="divide-20"></div>
+			<div id="search-bar">
+				<input class="search" type="text" placeholder="Search"><i class="fa fa-search search-icon"></i>
+			</div>
+			<ul>
+				<li>
+					<a href="index.html">
+						<i class="fa fa-tachometer fa-fw"></i> <span class="menu-text">仪表板</span>
+						<span class="selected"></span>
+					</a>
+				</li>
+				<li class="has-sub">
+					<a href="javascript:;" class="">
+						<i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">UI特性</span>
+						<span class="arrow"></span>
+					</a>
+					<ul class="sub">
+						<li><a class="" href="#"><span class="sub-menu-text">要素</span></a></li><li><a class="" href="notifications.html"><span class="sub-menu-text">Hubspot 通知</span></a></li>
+						<li><a class="" href="buttons_icons.html"><span class="sub-menu-text">按钮 & 图标</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">滑块 & 进度</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">字体排版</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">标签 & 项目组</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">树状图</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">嵌套列表</span></a></li>
+						<li class="has-sub-sub">
+							<a href="javascript:;" class=""><span class="sub-menu-text">三级菜单</span>
+								<span class="arrow"></span>
+							</a>
+							<ul class="sub-sub">
+								<li><a class="" href="#"><span class="sub-sub-menu-text">项目 1</span></a></li>
+								<li><a class="" href="#"><span class="sub-sub-menu-text">项目 2</span></a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a class="" href="#" ><i class="fa fa-desktop fa-fw"></i> <span class="menu-text">前端主题</span></a></li><li><a class="" href="#"><i class="fa fa-envelope-o fa-fw"></i> <span class="menu-text">收件箱</span></a></li>
+				<li class="has-sub">
+					<a href="javascript:;" class="">
+						<i class="fa fa-table fa-fw"></i> <span class="menu-text">表格</span>
+						<span class="arrow"></span>
+					</a>
+					<ul class="sub">
+						<li><a class="" href="#"><span class="sub-menu-text">简单地表格</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">动态表格</span></a></li>
+						<li><a class="" href="jqgrid_plugin.html"><span class="sub-menu-text">jQuery插件</span></a></li>
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="javascript:;" class="">
+						<i class="fa fa-pencil-square-o fa-fw"></i> <span class="menu-text">表单元素</span>
+						<span class="arrow"></span>
+					</a>
+					<ul class="sub">
+						<li><a class="" href="#"><span class="sub-menu-text">表单</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">向导和验证</span></a></li>
+						<li><a class="" href="rich_text_editors.html"><span class="sub-menu-text">富文本编辑器</span></a></li>
+
+						<li><a class="" href="#"><span class="sub-menu-text">Dropzone文件上传</span></a></li>
+					</ul>
+				</li>
+				<li><a class="" href="#"><i class="fa fa-th-large fa-fw"></i> <span class="menu-text">小工具和框</span></a></li>
+				<li class="has-sub">
+					<a href="javascript:;" class="">
+						<i class="fa fa-bar-chart-o fa-fw"></i> <span class="menu-text">视觉图表</span>
+						<span class="arrow"></span>
+					</a>
+					<ul class="sub">
+						<li><a class="" href="#"><span class="sub-menu-text">浮动图表</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">xCharts</span></a></li>
+
+						<li><a class="" href="others.html"><span class="sub-menu-text">其他</span></a></li>
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="javascript:;" class="">
+						<i class="fa fa-columns fa-fw"></i> <span class="menu-text">布局</span>
+						<span class="arrow"></span>
+					</a>
+					<ul class="sub">
+						<li><a class="" href="#"><span class="sub-menu-text">迷你边栏</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">固定标题</span></a></li>
+
+						<li><a class="" href="#"><span class="sub-menu-text">固定标题和侧边栏</span></a></li>
+					</ul>
+				</li>
+				<li><a class="" href="calendar.html"><i class="fa fa-calendar fa-fw"></i>
+					<span class="menu-text">日历
+									<span class="tooltip-error pull-right" title="" data-original-title="3 New Events">
+										<span class="label label-success">新</span>
+									</span>
+								</span>
+				</a>
+				</li>
+				<li class="has-sub">
+					<a href="javascript:;" class="">
+						<i class="fa fa-map-marker fa-fw"></i> <span class="menu-text">地图</span>
+						<span class="arrow"></span>
+					</a>
+					<ul class="sub">
+						<li><a class="" href="#"><span class="sub-menu-text">谷歌地图</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">矢量地图</span></a></li>
+					</ul>
+				</li>
+				<li><a class="" href="gallery.html"><i class="fa fa-picture-o fa-fw"></i> <span class="menu-text">画廊</span></a></li>
+				<li class="has-sub active">
+					<a href="javascript:;" class="">
+						<i class="fa fa-file-text fa-fw"></i> <span class="menu-text">更多页面</span>
+						<span class="arrow open"></span>
+						<span class="selected"></span>
+					</a>
+					<ul class="sub">
+						<li><a class="" href="login.html"><span class="sub-menu-text">登录注册选项1</span></a></li><li><a class="" href="#"><span class="sub-menu-text">登录注册选项2</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">用户资料</span></a></li>
+
+						<li><a class="" href="chats.html"><span class="sub-menu-text">聊天</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">待办事项和时间表</span></a></li>
+						<li class="current"><a class="" href="address_book.html"><span class="sub-menu-text">地址簿</span></a></li>
+
+						<li><a class="" href="#"><span class="sub-menu-text">价钱</span></a></li>
+						<li><a class="" href="invoice.html"><span class="sub-menu-text">发票</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">命令</span></a></li>
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="javascript:;" class="">
+						<i class="fa fa-briefcase fa-fw"></i> <span class="menu-text">其他页面 <span class="badge pull-right">9</span></span>
+						<span class="arrow"></span>
+					</a>
+					<ul class="sub">
+						<li><a class="" href="#"><span class="sub-menu-text">搜索结果</span></a></li>
+						<li><a class="" href="#"><span class="sub-menu-text">电子邮件模板</span></a></li>
+
+						<li>
+							<a class="" href="error_404.html"><span class="sub-menu-text">错误404选项 1</span></a>
+						</li>
+						<li>
+							<a class="" href="#"><span class="sub-menu-text">错误404选项 2</span></a>
+						</li>
+						<li>
+							<a class="" href="#"><span class="sub-menu-text">错误404选项 3</span></a>
+						</li>
+						<li>
+							<a class="" href="error_500.html"><span class="sub-menu-text">错误 500 选项 1</span></a>
+						</li>
+						<li>
+							<a class="" href="#"><span class="sub-menu-text">错误 500 选项 2</span></a>
+						</li>
+						<li>
+							<a class="" href="#"><span class="sub-menu-text">常见问题</span></a>
+						</li>
+						<li>
+							<a class="" href="#"><span class="sub-menu-text">空白页</span></a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 侧边栏结束-->
+		<div id="main-content">
+			<!-- 样本箱配置-->
+			<div class="modal fade" id="box-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					  <h4 class="modal-title">框设置</h4>
+					</div>
+					<div class="modal-body">
+						这里是box设置内容.
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					  <button type="button" class="btn btn-primary">保存更改</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			<div class="container">
+				<div class="row">
+					<div id="content" class="col-lg-12">
+						<!--页眉-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="page-header">
+									<ul class="breadcrumb">
+										<li>
+											<i class="fa fa-home"></i>
+											<a href="index.html">首页</a>
+										</li>
+										<li>画廊</li>
+									</ul>
+									<div class="clearfix">
+										<h3 class="content-title pull-left">画廊</h3>
+									</div>
+									<div class="description">组合图库</div>
+								</div>
+							</div>
+						</div>
+						<!-- 画廊 -->
+						<div class="row">
+							<div class="col-md-12">
+								<div class="box">
+									<div class="box-title">
+										<h4><i class="fa fa-bars"></i>作品集</h4>
+										<div class="tools">
+											<a href="#box-config" data-toggle="modal" class="config">
+												<i class="fa fa-cog"></i>
+											</a>
+											<a href="javascript:;" class="reload">
+												<i class="fa fa-refresh"></i>
+											</a>
+											<a href="javascript:;" class="collapse">
+												<i class="fa fa-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="remove">
+												<i class="fa fa-times"></i>
+											</a>
+										</div>
+									</div>
+									<div class="box-body clearfix">
+									   <div id="filter-controls" class="btn-group">
+										  <div class="hidden-xs">
+											  <!--定义data-filter属性，通过属性对图片进行查找-->
+											  <a href="#" class="btn btn-default" data-filter="*">所有</a>
+											  <a href="#" class="btn btn-info" data-filter=".category_1">Android Apps</a>
+											  <a href="#" class="btn btn-danger" data-filter=".category_2">iPhone Apps</a>
+											  <a href="#" class="btn btn-success" data-filter=".category_3">Windows Apps</a>
+											  <a href="#" class="btn btn-warning" data-filter=".category_4">Web Apps</a>
+										  </div>
+										  <div class="visible-xs">
+											   <select id="e1" class="form-control">
+												   <!--设定一个value值，根据class标签来显示对应的图片-->
+													<option value="*">All</option>
+													<option value=".category_1">Android Apps</option>
+													<option value=".category_2">iPhone Apps</option>
+													<option value=".category_3">Windows Apps</option>
+													<option value=".category_4">Web Apps</option>
+												</select>
+										  </div>
+									   </div>
+										<div id="filter-items" class="row">
+											<div class="col-md-3 category_1 item">
+												<div class="filter-content">
+													<img src="img/gallery/1.png" alt="" class="img-responsive" />
+													<div class="hover-content">
+														<h4>Android Apps</h4>
+														<a class="btn btn-success hover-link">
+															<i class="fa fa-edit fa-1x"></i>
+														</a>
+														<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/1.png" title="Image Title">
+															<i class="fa fa-search-plus fa-1x"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 category_2 item">
+												<div class="filter-content">
+													<img src="img/gallery/2.jpg" alt="" class="img-responsive" />
+													<div class="hover-content">
+														<h4>iPhone Apps</h4>
+														<a class="btn btn-success hover-link">
+															<i class="fa fa-edit fa-1x"></i>
+														</a>
+														<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/2.jpg" title="Image Title">
+															<i class="fa fa-search-plus fa-1x"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 category_3 item">
+												<div class="filter-content">
+													<img src="img/gallery/3.png" alt="" class="img-responsive" />
+													<div class="hover-content">
+														<h4>Windows Apps</h4>
+														<a class="btn btn-success hover-link">
+															<i class="fa fa-edit fa-1x"></i>
+														</a>
+														<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/3.png" title="Image Title">
+															<i class="fa fa-search-plus fa-1x"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 category_4 item">
+												<div class="filter-content">
+													<img src="img/gallery/4.png" alt="" class="img-responsive" />
+													<div class="hover-content">
+														<h4>Web Apps</h4>
+														<a class="btn btn-success hover-link">
+															<i class="fa fa-edit fa-1x"></i>
+														</a>
+														<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/4.png" title="Image Title">
+															<i class="fa fa-search-plus fa-1x"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 category_1 item">
+												<div class="filter-content">
+													<img src="img/gallery/5.png" alt="" class="img-responsive" />
+													<div class="hover-content">
+														<h4>Android Apps</h4>
+														<a class="btn btn-success hover-link">
+															<i class="fa fa-edit fa-1x"></i>
+														</a>
+														<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/5.png" title="Image Title">
+															<i class="fa fa-search-plus fa-1x"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 category_2 item">
+												<div class="filter-content">
+													<img src="img/gallery/8.png" alt="" class="img-responsive" />
+													<div class="hover-content">
+														<h4>iPhone Apps</h4>
+														<a class="btn btn-success hover-link">
+															<i class="fa fa-edit fa-1x"></i>
+														</a>
+														<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/8.png" title="Image Title">
+															<i class="fa fa-search-plus fa-1x"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 category_4 item">
+												<div class="filter-content">
+													<img src="img/gallery/7.jpg" alt="" class="img-responsive" />
+													<div class="hover-content">
+														<h4>Web Apps</h4>
+														<a class="btn btn-success hover-link">
+															<i class="fa fa-edit fa-1x"></i>
+														</a>
+														<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/7.jpg" title="Image Title">
+															<i class="fa fa-search-plus fa-1x"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3 category_4 item">
+												<div class="filter-content">
+													<img src="img/gallery/2.jpg" alt="" class="img-responsive" />
+													<div class="hover-content">
+														<h4>Web Apps</h4>
+														<a class="btn btn-success hover-link">
+															<i class="fa fa-edit fa-1x"></i>
+														</a>
+														<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/2.jpg" title="Image Title">
+															<i class="fa fa-search-plus fa-1x"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="footer-tools">
+							<span class="go-top">
+								<i class="fa fa-chevron-up"></i> 顶部
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!--加载脚本文件 详细的在index.html有注释-->
+	<script src="js/jquery/jquery-2.0.3.min.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="bootstrap-dist/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-daterangepicker/moment.min.js"></script>
+	<script src="js/bootstrap-daterangepicker/daterangepicker.min.js"></script>
+	<script type="text/javascript" src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script><script type="text/javascript" src="js/jQuery-slimScroll-1.3.0/slimScrollHorizontal.min.js"></script>
+	<script type="text/javascript" src="js/jQuery-BlockUI/jquery.blockUI.min.js"></script>
+	<script type="text/javascript" src="js/isotope/jquery.isotope.min.js"></script>
+	<script type="text/javascript" src="js/isotope/imagesloaded.pkgd.min.js"></script>
+	<script type="text/javascript" src="js/colorbox/jquery.colorbox.min.js"></script>
+	<script type="text/javascript" src="js/jQuery-Cookie/jquery.cookie.min.js"></script>
+	<script src="js/script.js"></script>
+	<script>
+		jQuery(document).ready(function() {		
+			App.setPage("gallery");  //设置当前页面
+			App.init(); //清除插件和元素
+		});
+	</script>
+</body>
+</html>

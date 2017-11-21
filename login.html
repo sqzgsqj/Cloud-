@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>云管理 | 登录</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!--引入css样式表-->
+	<link rel="stylesheet" type="text/css" href="css/cloud-admin.css" >
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+	<link rel="stylesheet" type="text/css" href="js/uniform/css/uniform.default.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/animatecss/animate.min.css" />
+	<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body class="login">
+	<section id="page">
+			<!-- 头部 -->
+			<header>
+				<!-- 导航工具栏 -->
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-md-offset-4">
+							<div id="logo">
+								<a href="index.html"><img src="img/logo/logo-alt.png" height="40" alt="logo name" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- 登录 -->
+			<section id="login" class="visible">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-md-offset-4">
+							<div class="login-box-plain">
+								<h2 class="bigintro">登录</h2>
+								<div class="divide-40"></div>
+								<form role="form">
+								  <div class="form-group">
+									<label for="exampleInputEmail1">电子邮箱：</label>
+									<i class="fa fa-envelope"></i>
+									<input type="email" class="form-control" id="exampleInputEmail1" >
+								  </div>
+								  <div class="form-group"> 
+									<label for="exampleInputPassword1">密码</label>
+									<i class="fa fa-lock"></i>
+									<input type="password" class="form-control" id="exampleInputPassword1" >
+								  </div>
+								  <div class="form-actions">
+									<label class="checkbox"> <input type="checkbox" class="uniform" value=""> 记住我</label>
+									<button type="submit" class="btn btn-danger">提交</button>
+								  </div>
+								</form>
+								<div class="divide-20"></div>
+								<div class="center">
+									<strong>或者使用你的社交账号登录</strong>
+								</div>
+								<div class="divide-20"></div>
+								<div class="social-login center">
+									<a class="btn btn-primary btn-lg">
+										<i class="fa fa-facebook"></i>
+									</a>
+									<a class="btn btn-info btn-lg">
+										<i class="fa fa-twitter"></i>
+									</a>
+									<a class="btn btn-danger btn-lg">
+										<i class="fa fa-google-plus"></i>
+									</a>
+								</div>
+								<div class="login-helpers">
+									<a href="#" onclick="swapScreen('forgot');return false;">忘记密码?</a> <br>
+									没有我们的账户? <a href="#" onclick="swapScreen('register');return false;">立即注册!</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- 注册 -->
+			<section id="register">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-md-offset-4">
+							<div class="login-box-plain">
+								<h2 class="bigintro">注册</h2>
+								<div class="divide-40"></div>
+								<form role="form">
+								  <div class="form-group">
+									<label for="exampleInputName">姓名：</label>
+									<i class="fa fa-font"></i>
+									<input type="text" class="form-control" id="exampleInputName" >
+								  </div>
+								  <div class="form-group">
+									<label for="exampleInputUsername">用户名：</label>
+									<i class="fa fa-user"></i>
+									<input type="text" class="form-control" id="exampleInputUsername" >
+								  </div>
+								  <div class="form-group">
+									<label for="exampleInputEmail1">电子邮件</label>
+									<i class="fa fa-envelope"></i>
+									<input type="email" class="form-control" id="exampleInputEmail1" >
+								  </div>
+								  <div class="form-group"> 
+									<label for="exampleInputPassword1">密码</label>
+									<i class="fa fa-lock"></i>
+									<input type="password" class="form-control" id="exampleInputPassword1" >
+								  </div>
+								  <div class="form-group"> 
+									<label for="exampleInputPassword2">确认密码</label>
+									<i class="fa fa-check-square-o"></i>
+									<input type="password" class="form-control" id="exampleInputPassword2" >
+								  </div>
+								  <div class="form-actions">
+									<label class="checkbox"> <input type="checkbox" class="uniform" value=""> 我同意<a href="#">服务条款e</a> 和 <a href="#">保密条例</a></label>
+									<button type="submit" class="btn btn-success">注册</button>
+								  </div>
+								</form>
+								<div class="divide-20"></div>
+								<div class="center">
+									<strong>或者使用你的社交账号注册</strong>
+								</div>
+								<div class="divide-20"></div>
+								<div class="social-login center">
+									<a class="btn btn-primary btn-lg">
+										<i class="fa fa-facebook"></i>
+									</a>
+									<a class="btn btn-info btn-lg">
+										<i class="fa fa-twitter"></i>
+									</a>
+									<a class="btn btn-danger btn-lg">
+										<i class="fa fa-google-plus"></i>
+									</a>
+								</div>
+								<div class="login-helpers">
+									<a href="#" onclick="swapScreen('login');return false;"> 返回登录</a> <br>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- 忘记密码 -->
+			<section id="forgot">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-md-offset-4">
+							<div class="login-box-plain">
+								<h2 class="bigintro">重设密码</h2>
+								<div class="divide-40"></div>
+								<form role="form">
+								  <div class="form-group">
+									<label for="exampleInputEmail1">输入你的邮件地址</label>
+									<i class="fa fa-envelope"></i>
+									<input type="email" class="form-control" id="exampleInputEmail1" >
+								  </div>
+								  <div class="form-actions">
+									<button type="submit" class="btn btn-info">重置</button>
+								  </div>
+								</form>
+								<div class="login-helpers">
+									<a href="#" onclick="swapScreen('login');return false;">返回登录</a> <br>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+	</section>
+<!--加载脚本文件，详细的在index.html中有注释-->
+	<script src="js/jquery/jquery-2.0.3.min.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="bootstrap-dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/uniform/jquery.uniform.min.js"></script>
+	<script src="js/script.js"></script>
+	<script>
+		jQuery(document).ready(function() {		
+			App.setPage("login");  //设置当前页面
+			App.init(); //清楚插件和元素
+		});
+	</script>
+	<script type="text/javascript">
+		//可见动画
+		function swapScreen(id) {
+			jQuery('.visible').removeClass('visible animated fadeInUp');
+			jQuery('#'+id).addClass('visible animated fadeInUp');
+		}
+	</script>
+</body>
+</html>
